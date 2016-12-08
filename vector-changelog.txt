@@ -1,0 +1,10 @@
+Zad.6 - klasa opisująca wektor
+Język - C++
+
+v0.1:
+
+-Konstruktory, destruktory
+
+-Operatory: przypisania, [] (dla odczytu i zapisu)
+
+-funkcje: get_size(), set_size(int), dodaj(double)
