@@ -14,11 +14,14 @@ Vector(int _len=1):len(_len){vect = new double[len];}
 //konstruktor dwuargumentowy
 Vector(double *tab, int _len=2):len(_len){
 vect = new double[len];
-for(int i=0;i<len;i++){
-	if (tab[i])vect[i]=tab[i];
-	else vect[i]=0;
-	}
+int i=0;
+while(i<len && tab[i]){
+	vect[i]=tab[i++];
+	i++;
 }
+while(i<len) vect[i++]=0;
+}
+
 //konstruktor kopiujacy
 Vector(Vector& A){
 len = A.len;
@@ -77,14 +80,13 @@ int len;
 
 
 int main(){
-double tab[4]={2,3.3,5,9};
-Vector A(tab,2);
-A.set_size(3);
-A[2]=9.9;
+double tab[4]={2,3.3};
+Vector A(tab,8);
+
+A[4]=9.9;
 Vector B=A;
 
-B.set_size(5);
-cout<<B[0]<<' '<<A[1]<<' '<<B[1]<<' '<<B[2]<<endl;
+cout<<B[0]<<' '<<A[1]<<' '<<B[1]<<' '<<B[2]<<' '<<B[3]<<' '<<B[4]<<' '<<B[5]<<' '<<B[6]<<' '<<B[7]<<' '<<endl;
 return 0;
 }
 
