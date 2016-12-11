@@ -1,6 +1,10 @@
 Zad.6 - klasa opisująca wektor
 Język - C++
 
+v0.2:
+-Naprawiony: konstruktor 2-argumentowy (przyjmuje tablicę double i dlugosc vectora)
+-operator przypisania
+
 v0.1:
 
 -Konstruktory, destruktory
