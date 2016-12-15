@@ -32,9 +32,10 @@ for(int i=0;i<len;i++) vect[i]=A.vect[i];
 //operator przypisania
 Vector& operator=(const Vector& B){
 if (this!=&B){
-	delete[] vect;
 	len=B.len;
-	vect = new double[len];
+	double* local_vect = new double[len];
+	delete[] vect;	
+	vect = local_vect;
 	for(int i=0;i<len;i++) vect[i]=B.vect[i];
 	}
 return *this;
@@ -57,8 +58,9 @@ Vector& set_size(int a){
 }	
 //dodaj - dodaje liczbe na ostatniej pozycji wektora
 Vector& dodaj(double a){
-	double* n_vec = new double(len+1);
-	for (int i=0;i<len+1;i++) n_vec[i]=i<len?vect[i]:a;
+	len++;
+	double* n_vec = new double[len];
+	for (int i=0;i<len;i++) n_vec[i]=(i<len-1?vect[i]:a);
 	delete[] vect;
 	vect = n_vec;
 	return *this;
@@ -83,12 +85,13 @@ std::istream& operator>>(std::istream& is, Vector& A){
 	return is;
 }
 std::ostream& operator<<(std::ostream& os, Vector& A){
-	os<<A.len<<':';
+	os<<'['<<A.len<<':';
 	for(int i=0;i<A.len;i++){
 		os<<' ';
 		cout.width(4);
 		os<<A[i];
 	}
+	os<<']';
 	return os;
 }
 bool operator==(Vector A, Vector B){
@@ -131,18 +134,25 @@ vect = new double[len];
 for(int i=0;i<len;i++) vect[i]=A.vect[i];
 Sort();
 }
-//
+//Jeszcze sortuj przy: >>, setsize(), dodaj(),=
 };
 
 int main(){
-double tab[4]={2,3.3};
-Vector A(tab,8);
-
-A[4]=9.9;
-Vector B=A;
-cin>>B;
-SVector C(B);
-cout<<A<<endl<<B<<endl<<C<<endl;
+      int i; 
+      Vector v1(10); 
+      for (i=0; i<v1.get_size(); i++) v1[i] = i; 
+      Vector v2(v1), v3; 
+      v3 = v2; 
+      v3[2] = 5.5; 
+      cout << "v1 = " << v1 << endl << "v2 = " << v2 
+     << endl << "v3 = " << v3 << endl; 
+      if (v1 == v2) cout << "v1 == v2" << endl; 
+      if (v1 != v3) cout << "v1 != v3" << endl; 
+      v1.set_size(15); 
+      v1.dodaj(34.56);
+      cout << "podaj v2 = "; 
+      cin >> v2; 
+      cout << "v1 = " << v1 << endl << "v2 = " << v2 <<endl; 
 return 0;
 }
 
