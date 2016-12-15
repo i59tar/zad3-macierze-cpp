@@ -1,6 +1,10 @@
 Zad.6 - klasa opisująca wektor
 Język - C++
 
+V0.3:
+-operatory: ==,!=,<<,>>
+- Początek klasy SVector: Konstruktory
+
 v0.2:
 -Naprawiony: konstruktor 2-argumentowy (przyjmuje tablicę double i dlugosc vectora)
 -operator przypisania
