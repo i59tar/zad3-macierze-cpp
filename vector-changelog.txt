@@ -1,6 +1,12 @@
 Zad.6 - klasa opisująca wektor
 Język - C++
 
+v0.4:
+-Klasa Vector: rozdzielona na pliki: zad06main.cpp (gdzie są odpalane testy), zad06v.h(deklaracja klasy i jej funkcji), zad06v.cpp(definicja klasy Vector), zad06main.h(jedno miejsce ze wszystkimi includami)
+-Klasa SVector: zakomentowana na obecną chwilę
+
+Kompilowanie w systemach Linuxowych: gpp nazwa1.cpp nazwa2.cpp itp.    nazwa programu to a.out
+
 v0.3.1:
 -Fixed:dodaj(double)
 
