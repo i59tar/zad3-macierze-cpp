@@ -1,5 +1,5 @@
-# zad3-macierze-cpp
-Zadanie 3 - klasa opisująca macierze rzeczywiste. Język - C++
+# zad02-changelog
+Zadanie 2 - klasa opisująca macierze rzeczywiste. Język - C++
 
 Praca w toku.
 
