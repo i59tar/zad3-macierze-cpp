@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "iostream": "cpp",
+        "cstdlib": "cpp",
+        "system_error": "cpp",
+        "type_traits": "cpp"
+    }
+}
